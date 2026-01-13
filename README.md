@@ -1,10 +1,19 @@
 RISC-V GNU Compiler Toolchain
 =============================
 
-This is the RISC-V C and C++ cross-compiler. It supports two build modes:
+This is the RISC-V C and C++ cross-compiler for **the Shrewd project**. It supports two build modes:
 a generic ELF/Newlib toolchain and a more sophisticated Linux-ELF/glibc
 toolchain.
 
+### Compile and install
+
+Navigate to the root directory and run the following commands:
+```bash
+ ./configure --prefix=/installation/directory --enable-multilib --with-languages=c,c++,fortran
+ make -jNUMCORES linux
+```
+
+<!-- 
 ###  Getting the sources
 
 This repository uses submodules, but submodules will fetch automatically on demand,
@@ -502,4 +511,4 @@ you should take care to ensure that both newlib and the external library are bui
 
 Errors that indicate a code model mismatch include "relocation overflow" or "relocation truncated" errors from the linker being unable to successfully relocate symbols in the executable.
 
-By default, `riscv-gnu-toolchain` builds newlib with `-mcmodel=medlow`. You can use the alternative `medany` code model (as used in libgloss-htif) by passing `--with-cmodel=medany` to the configure script.
+By default, `riscv-gnu-toolchain` builds newlib with `-mcmodel=medlow`. You can use the alternative `medany` code model (as used in libgloss-htif) by passing `--with-cmodel=medany` to the configure script. -->
